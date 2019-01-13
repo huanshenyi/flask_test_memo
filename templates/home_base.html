@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/index.css', _external=True) }}">
+    {% block head %}
+    <title>ホームページ</title>
+    {% endblock %}
+</head>
+<body>
+<!-- フッター -->
+<header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">ホームページ</a></li>
+            <li><a href="{{ url_for('cat', name='オススメ') }}">オススメ</a></li>
+            <li><a href="{{ url_for('cat', name='python') }}">python</a></li>
+            <li><a href="{{ url_for('cat', name='php') }}">php</a></li>
+            <li><a href="{{ url_for('cat', name='Go') }}">Go</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- /フッタ -->
+<!-- 内容 -->
+<article>
+   {% block content %}
+  <!-- 内容区域 -->
+  {% endblock  %}
+</article>
+<!-- /内容 -->
+{% block extrajs %}
+<!-- 他の何か -->
+{% endblock  %}
+</body>
+</html>
